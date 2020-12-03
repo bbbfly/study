@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue 前端导入导出 excel 文件 | bbbfly</title>
+    <meta name="generator" content="VuePress 1.7.0">
+    
+    <meta name="description" content="记录个人学习网站">
+    
+    <link rel="preload" href="/study/assets/css/0.styles.3a7c130b.css" as="style"><link rel="preload" href="/study/assets/js/app.1a30554e.js" as="script"><link rel="preload" href="/study/assets/js/3.9d14a621.js" as="script"><link rel="preload" href="/study/assets/js/24.560efb52.js" as="script"><link rel="prefetch" href="/study/assets/js/10.834ec77d.js"><link rel="prefetch" href="/study/assets/js/11.7fa130b9.js"><link rel="prefetch" href="/study/assets/js/12.5328e72e.js"><link rel="prefetch" href="/study/assets/js/13.b0b5f581.js"><link rel="prefetch" href="/study/assets/js/14.05c763d8.js"><link rel="prefetch" href="/study/assets/js/15.e7dc1a29.js"><link rel="prefetch" href="/study/assets/js/16.19718f0e.js"><link rel="prefetch" href="/study/assets/js/17.ccbf9b46.js"><link rel="prefetch" href="/study/assets/js/18.abd14c50.js"><link rel="prefetch" href="/study/assets/js/19.bdc4abec.js"><link rel="prefetch" href="/study/assets/js/2.a6793291.js"><link rel="prefetch" href="/study/assets/js/20.ba57e271.js"><link rel="prefetch" href="/study/assets/js/21.9b73149c.js"><link rel="prefetch" href="/study/assets/js/22.ffa486aa.js"><link rel="prefetch" href="/study/assets/js/23.79c4fbc5.js"><link rel="prefetch" href="/study/assets/js/25.27a0b02c.js"><link rel="prefetch" href="/study/assets/js/26.fa067b69.js"><link rel="prefetch" href="/study/assets/js/27.8ae52722.js"><link rel="prefetch" href="/study/assets/js/28.eb945df1.js"><link rel="prefetch" href="/study/assets/js/29.90322733.js"><link rel="prefetch" href="/study/assets/js/30.5399ac14.js"><link rel="prefetch" href="/study/assets/js/31.f0c43192.js"><link rel="prefetch" href="/study/assets/js/32.0a915979.js"><link rel="prefetch" href="/study/assets/js/4.bf5343ba.js"><link rel="prefetch" href="/study/assets/js/5.bf5123f8.js"><link rel="prefetch" href="/study/assets/js/6.74a1320d.js"><link rel="prefetch" href="/study/assets/js/7.2d870757.js"><link rel="prefetch" href="/study/assets/js/8.870c6af6.js"><link rel="prefetch" href="/study/assets/js/9.b8035e78.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.3a7c130b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">bbbfly</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>目录</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/guide/vue/" aria-current="page" class="sidebar-link">vue介绍</a></li><li><a href="/study/guide/vue/do-excel.html" aria-current="page" class="active sidebar-link">vue 前端导入导出 excel 文件</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/study/guide/vue/do-excel.html#引入npm包" class="sidebar-link">引入npm包</a></li><li class="sidebar-sub-header"><a href="/study/guide/vue/do-excel.html#引入js文件" class="sidebar-link">引入js文件</a></li></ul></li><li><a href="/study/guide/vue/components.html" class="sidebar-link">自定义组件</a></li><li><a href="/study/guide/vue/utils-vue.html" class="sidebar-link">常用</a></li><li><a href="/study/guide/vue/table-selection.html" class="sidebar-link">el-table 多表格 分页 多选  mixin</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>小程序</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>canvas</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>html</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue-前端导入导出-excel-文件"><a href="#vue-前端导入导出-excel-文件" class="header-anchor">#</a> vue 前端导入导出 excel 文件</h1> <p>效果图</p> <p><img src="/do-excel.gif" alt=""></p> <h2 id="引入npm包"><a href="#引入npm包" class="header-anchor">#</a> 引入npm包</h2> <div class="language- extra-class"><pre class="language-text"><code>yarn add file-saver
+yarn add xlsx
+yarn add script-loader --dev
+</code></pre></div><h2 id="引入js文件"><a href="#引入js文件" class="header-anchor">#</a> 引入js文件</h2> <blockquote><p>Blob.js  export2excel.js</p></blockquote> <div class="language-javascript extra-class"><pre class="language-javascript"><code>
+<span class="token keyword">import</span> <span class="token constant">XLSX</span> <span class="token keyword">from</span> <span class="token string">'xlsx'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> export_json_to_excel <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./Export2Excel'</span>
+
+<span class="token comment">/**
+ * 处理上传excel文件 数据 转数组
+ * @param {Object} raw
+ * @param {String} from 用于指定 表格 表头 启始行例 如A2 (默认A1 表格第一行第一例)
+ * @return: {Array}
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">importExcel</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">raw<span class="token punctuation">,</span> <span class="token keyword">from</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    reader<span class="token punctuation">.</span><span class="token function-variable function">onloadend</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> binary <span class="token operator">=</span> <span class="token string">''</span>
+      <span class="token keyword">const</span> bytes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>result<span class="token punctuation">)</span>
+      <span class="token keyword">const</span> length <span class="token operator">=</span> bytes<span class="token punctuation">.</span>byteLength
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        binary <span class="token operator">+=</span> String<span class="token punctuation">.</span><span class="token function">fromCharCode</span><span class="token punctuation">(</span>bytes<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// let XLSX = require('xlsx')</span>
+      <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token constant">XLSX</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>binary<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        type<span class="token operator">:</span> <span class="token string">'binary'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token comment">// 表头不是表格第一行第一列(A1) 开始时 需指定 表头 从哪一行哪一例开始 如 A2 第二行A例</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">from</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// !ref 表格 指定 内容行例 范围 如 A1:G12</span>
+        data<span class="token punctuation">.</span>Sheets<span class="token punctuation">[</span>data<span class="token punctuation">.</span>SheetNames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'!ref'</span><span class="token punctuation">]</span> <span class="token operator">=</span> data<span class="token punctuation">.</span>Sheets<span class="token punctuation">[</span>data<span class="token punctuation">.</span>SheetNames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">'!ref'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'A1'</span><span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token constant">XLSX</span><span class="token punctuation">.</span>utils<span class="token punctuation">.</span><span class="token function">sheet_to_json</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>Sheets<span class="token punctuation">[</span>data<span class="token punctuation">.</span>SheetNames<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    reader<span class="token punctuation">.</span><span class="token function">readAsArrayBuffer</span><span class="token punctuation">(</span>raw<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">/**
+ * 导入表格数据 转 table 显示
+ * @param {Array} arr
+ * @param {Array} columns 表格数据结构 [{prop:'参数名',label:'表头名称'}]
+ * @return: {Array}
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">excel2Table</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">arr<span class="token punctuation">,</span> columns</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> columns<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> c</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      obj<span class="token punctuation">[</span>c<span class="token punctuation">.</span>prop<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">[</span>c<span class="token punctuation">.</span>label<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">''</span>
+      <span class="token keyword">return</span> obj
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * 导出excel表格
+ */</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">exportExcel</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">list<span class="token punctuation">,</span> columns</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> tHeader <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">const</span> filterVal <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  columns<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    tHeader<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>label<span class="token punctuation">)</span>
+    filterVal<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>prop<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token function">formatJson</span><span class="token punctuation">(</span>filterVal<span class="token punctuation">,</span> list<span class="token punctuation">)</span>
+  <span class="token function">export_json_to_excel</span><span class="token punctuation">(</span>tHeader<span class="token punctuation">,</span> data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> <span class="token function-variable function">formatJson</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">filterVal<span class="token punctuation">,</span> jsonData</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> jsonData<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> filterVal<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">j</span> <span class="token operator">=&gt;</span> v<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/guide/vue/" class="prev router-link-active">
+        vue介绍
+      </a></span> <span class="next"><a href="/study/guide/vue/components.html">
+        自定义组件
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.1a30554e.js" defer></script><script src="/study/assets/js/3.9d14a621.js" defer></script><script src="/study/assets/js/24.560efb52.js" defer></script>
+  </body>
+</html>

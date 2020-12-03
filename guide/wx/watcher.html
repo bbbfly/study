@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>微信小程序自定义watcher监听器 | bbbfly</title>
+    <meta name="generator" content="VuePress 1.7.0">
+    
+    <meta name="description" content="记录个人学习网站">
+    
+    <link rel="preload" href="/study/assets/css/0.styles.3a7c130b.css" as="style"><link rel="preload" href="/study/assets/js/app.1a30554e.js" as="script"><link rel="preload" href="/study/assets/js/3.9d14a621.js" as="script"><link rel="preload" href="/study/assets/js/31.f0c43192.js" as="script"><link rel="prefetch" href="/study/assets/js/10.834ec77d.js"><link rel="prefetch" href="/study/assets/js/11.7fa130b9.js"><link rel="prefetch" href="/study/assets/js/12.5328e72e.js"><link rel="prefetch" href="/study/assets/js/13.b0b5f581.js"><link rel="prefetch" href="/study/assets/js/14.05c763d8.js"><link rel="prefetch" href="/study/assets/js/15.e7dc1a29.js"><link rel="prefetch" href="/study/assets/js/16.19718f0e.js"><link rel="prefetch" href="/study/assets/js/17.ccbf9b46.js"><link rel="prefetch" href="/study/assets/js/18.abd14c50.js"><link rel="prefetch" href="/study/assets/js/19.bdc4abec.js"><link rel="prefetch" href="/study/assets/js/2.a6793291.js"><link rel="prefetch" href="/study/assets/js/20.ba57e271.js"><link rel="prefetch" href="/study/assets/js/21.9b73149c.js"><link rel="prefetch" href="/study/assets/js/22.ffa486aa.js"><link rel="prefetch" href="/study/assets/js/23.79c4fbc5.js"><link rel="prefetch" href="/study/assets/js/24.560efb52.js"><link rel="prefetch" href="/study/assets/js/25.27a0b02c.js"><link rel="prefetch" href="/study/assets/js/26.fa067b69.js"><link rel="prefetch" href="/study/assets/js/27.8ae52722.js"><link rel="prefetch" href="/study/assets/js/28.eb945df1.js"><link rel="prefetch" href="/study/assets/js/29.90322733.js"><link rel="prefetch" href="/study/assets/js/30.5399ac14.js"><link rel="prefetch" href="/study/assets/js/32.0a915979.js"><link rel="prefetch" href="/study/assets/js/4.bf5343ba.js"><link rel="prefetch" href="/study/assets/js/5.bf5123f8.js"><link rel="prefetch" href="/study/assets/js/6.74a1320d.js"><link rel="prefetch" href="/study/assets/js/7.2d870757.js"><link rel="prefetch" href="/study/assets/js/8.870c6af6.js"><link rel="prefetch" href="/study/assets/js/9.b8035e78.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.3a7c130b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">bbbfly</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>目录</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>小程序</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/guide/wx/" aria-current="page" class="sidebar-link">小程序</a></li><li><a href="/study/guide/wx/request.html" class="sidebar-link">小程序请求封装</a></li><li><a href="/study/guide/wx/promise.html" class="sidebar-link">promise封装</a></li><li><a href="/study/guide/wx/watcher.html" aria-current="page" class="active sidebar-link">微信小程序自定义watcher监听器</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/study/guide/wx/override-page.html" class="sidebar-link">重写小程序page函数</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>canvas</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>html</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="微信小程序自定义watcher监听器"><a href="#微信小程序自定义watcher监听器" class="header-anchor">#</a> 微信小程序自定义watcher监听器</h1> <div class="language-js extra-class"><pre class="language-js"><code> <span class="token comment">/**
+ * 设置监听器
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">setWatcher</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> data <span class="token operator">=</span> page<span class="token punctuation">.</span>data<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> watch <span class="token operator">=</span> page<span class="token punctuation">.</span>watch<span class="token punctuation">;</span>
+    Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>watch<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">let</span> key <span class="token operator">=</span> v<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 将watch中的属性以'.'切分成数组</span>
+      <span class="token keyword">let</span> nowData <span class="token operator">=</span> data<span class="token punctuation">;</span> <span class="token comment">// 将data赋值给nowData</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>i<span class="token operator">&lt;</span> key<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历key数组的元素，除了最后一个！</span>
+        nowData <span class="token operator">=</span> nowData<span class="token punctuation">[</span>key<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 将nowData指向它的key属性对象</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">let</span> lastKey <span class="token operator">=</span> key<span class="token punctuation">[</span>key<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token comment">// 假设key==='my.name',此时nowData===data['my']===data.my,lastKey==='name'</span>
+      <span class="token keyword">let</span> watchFun <span class="token operator">=</span> watch<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">.</span>handler <span class="token operator">||</span> watch<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 兼容带handler和不带handler的两种写法</span>
+      <span class="token keyword">let</span> deep <span class="token operator">=</span> watch<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">.</span>deep<span class="token punctuation">;</span> <span class="token comment">// 若未设置deep,则为undefine</span>
+      <span class="token function">observe</span><span class="token punctuation">(</span>nowData<span class="token punctuation">,</span> lastKey<span class="token punctuation">,</span> watchFun<span class="token punctuation">,</span> deep<span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 监听nowData对象的lastKey</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/**
+   * 监听属性 并执行监听函数
+   */</span>
+<span class="token keyword">const</span>  <span class="token function-variable function">observe</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> watchFun<span class="token punctuation">,</span> deep<span class="token punctuation">,</span> page</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> val <span class="token operator">=</span> obj<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// 判断deep是true 且 val不能为空 且 typeof val==='object'（数组内数值变化也需要深度监听）</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>deep <span class="token operator">&amp;&amp;</span> val <span class="token operator">!=</span> <span class="token keyword">null</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">typeof</span> val <span class="token operator">===</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">childKey</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span> <span class="token comment">// 遍历val对象下的每一个key</span>
+        <span class="token function">observe</span><span class="token punctuation">(</span>val<span class="token punctuation">,</span> childKey<span class="token punctuation">,</span> watchFun<span class="token punctuation">,</span> deep<span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 递归调用监听函数</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      configurable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      enumerable<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 用page对象调用,改变函数内this指向,以便this.data访问data内的属性值</span>
+        <span class="token function">watchFun</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>page<span class="token punctuation">,</span> value<span class="token punctuation">,</span> val<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// value是新值，val是旧值</span>
+        val <span class="token operator">=</span> value<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>deep<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 若是深度监听,重新监听该对象，以便监听其属性。</span>
+          <span class="token function">observe</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> key<span class="token punctuation">,</span> watchFun<span class="token punctuation">,</span> deep<span class="token punctuation">,</span> page<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function-variable function">get</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> val<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">export</span> <span class="token keyword">default</span> setWatcher
+</code></pre></div><blockquote><h3 id="小程序页面里使用watcher"><a href="#小程序页面里使用watcher" class="header-anchor">#</a> 小程序页面里使用watcher</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> setWatcher <span class="token keyword">from</span> <span class="token string">'../../utils/watcher'</span>
+<span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+	data<span class="token operator">:</span><span class="token punctuation">{</span>
+		test<span class="token operator">:</span><span class="token punctuation">[</span>a<span class="token operator">:</span><span class="token string">'1'</span><span class="token punctuation">]</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+	<span class="token function">onLoad</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+		<span class="token function">setWatcher</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
+    watch<span class="token operator">:</span><span class="token punctuation">{</span>
+        <span class="token string">'test.a'</span><span class="token operator">:</span><span class="token punctuation">{</span>
+          <span class="token function">handler</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          deep<span class="token operator">:</span><span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div></blockquote></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/guide/wx/promise.html" class="prev">
+        promise封装
+      </a></span> <span class="next"><a href="/study/guide/wx/override-page.html">
+        重写小程序page函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.1a30554e.js" defer></script><script src="/study/assets/js/3.9d14a621.js" defer></script><script src="/study/assets/js/31.f0c43192.js" defer></script>
+  </body>
+</html>

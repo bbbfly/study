@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>重写小程序page函数 | bbbfly</title>
+    <meta name="generator" content="VuePress 1.7.0">
+    
+    <meta name="description" content="记录个人学习网站">
+    
+    <link rel="preload" href="/study/assets/css/0.styles.3a7c130b.css" as="style"><link rel="preload" href="/study/assets/js/app.1a30554e.js" as="script"><link rel="preload" href="/study/assets/js/3.9d14a621.js" as="script"><link rel="preload" href="/study/assets/js/28.eb945df1.js" as="script"><link rel="prefetch" href="/study/assets/js/10.834ec77d.js"><link rel="prefetch" href="/study/assets/js/11.7fa130b9.js"><link rel="prefetch" href="/study/assets/js/12.5328e72e.js"><link rel="prefetch" href="/study/assets/js/13.b0b5f581.js"><link rel="prefetch" href="/study/assets/js/14.05c763d8.js"><link rel="prefetch" href="/study/assets/js/15.e7dc1a29.js"><link rel="prefetch" href="/study/assets/js/16.19718f0e.js"><link rel="prefetch" href="/study/assets/js/17.ccbf9b46.js"><link rel="prefetch" href="/study/assets/js/18.abd14c50.js"><link rel="prefetch" href="/study/assets/js/19.bdc4abec.js"><link rel="prefetch" href="/study/assets/js/2.a6793291.js"><link rel="prefetch" href="/study/assets/js/20.ba57e271.js"><link rel="prefetch" href="/study/assets/js/21.9b73149c.js"><link rel="prefetch" href="/study/assets/js/22.ffa486aa.js"><link rel="prefetch" href="/study/assets/js/23.79c4fbc5.js"><link rel="prefetch" href="/study/assets/js/24.560efb52.js"><link rel="prefetch" href="/study/assets/js/25.27a0b02c.js"><link rel="prefetch" href="/study/assets/js/26.fa067b69.js"><link rel="prefetch" href="/study/assets/js/27.8ae52722.js"><link rel="prefetch" href="/study/assets/js/29.90322733.js"><link rel="prefetch" href="/study/assets/js/30.5399ac14.js"><link rel="prefetch" href="/study/assets/js/31.f0c43192.js"><link rel="prefetch" href="/study/assets/js/32.0a915979.js"><link rel="prefetch" href="/study/assets/js/4.bf5343ba.js"><link rel="prefetch" href="/study/assets/js/5.bf5123f8.js"><link rel="prefetch" href="/study/assets/js/6.74a1320d.js"><link rel="prefetch" href="/study/assets/js/7.2d870757.js"><link rel="prefetch" href="/study/assets/js/8.870c6af6.js"><link rel="prefetch" href="/study/assets/js/9.b8035e78.js">
+    <link rel="stylesheet" href="/study/assets/css/0.styles.3a7c130b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/study/" class="home-link router-link-active"><!----> <span class="site-name">bbbfly</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/study/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/study/guide/" class="nav-link router-link-active">
+  目录
+</a></div><div class="nav-item"><a href="/study/knowledge/" class="nav-link">
+  知识库
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>目录</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>react</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nodejs</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>js</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>小程序</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/study/guide/wx/" aria-current="page" class="sidebar-link">小程序</a></li><li><a href="/study/guide/wx/request.html" class="sidebar-link">小程序请求封装</a></li><li><a href="/study/guide/wx/promise.html" class="sidebar-link">promise封装</a></li><li><a href="/study/guide/wx/watcher.html" class="sidebar-link">微信小程序自定义watcher监听器</a></li><li><a href="/study/guide/wx/override-page.html" aria-current="page" class="active sidebar-link">重写小程序page函数</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>canvas</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>html</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="重写小程序page函数"><a href="#重写小程序page函数" class="header-anchor">#</a> 重写小程序page函数</h1> <blockquote><p>应用场景 为全局性 业务处理 事件</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 获取当前路由 url query</span>
+<span class="token keyword">const</span> <span class="token function-variable function">getUrl</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> pages <span class="token operator">=</span> <span class="token function">getCurrentPages</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">let</span> cPage <span class="token operator">=</span> pages<span class="token punctuation">[</span>pages<span class="token punctuation">.</span>length <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+  <span class="token keyword">let</span> url <span class="token operator">=</span> cPage<span class="token punctuation">.</span>route
+  <span class="token keyword">let</span> options <span class="token operator">=</span> cPage<span class="token punctuation">.</span>options
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>url<span class="token punctuation">,</span>options<span class="token punctuation">,</span>pageCtx<span class="token operator">:</span>cPage<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// onShow 生命周期</span>
+<span class="token keyword">const</span> <span class="token function-variable function">onPageShow</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ctx</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token comment">// 业务代码</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// onHide 生命周期</span>
+<span class="token keyword">const</span> <span class="token function-variable function">onPageHide</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">ctx</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 业务代码</span>
+  <span class="token keyword">let</span> globalData <span class="token operator">=</span> <span class="token function">getApp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>globalData
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'leavePage'</span><span class="token punctuation">,</span>ctx<span class="token punctuation">.</span>data<span class="token punctuation">,</span>globalData<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 重写page</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> <span class="token function-variable function">initGlobalLog</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">let</span> originPage <span class="token operator">=</span> Page
+  <span class="token function-variable function">Page</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">ctx<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">let</span> originHide <span class="token operator">=</span> ctx<span class="token punctuation">.</span>onHide
+    <span class="token keyword">let</span> originShow <span class="token operator">=</span> ctx<span class="token punctuation">.</span>onShow
+    ctx<span class="token punctuation">.</span><span class="token function-variable function">onShow</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token function">onPageShow</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+      originShow <span class="token operator">&amp;&amp;</span> <span class="token function">originShow</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    ctx<span class="token punctuation">.</span><span class="token function-variable function">onHide</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+       <span class="token function">onPageHide</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+       originHide <span class="token operator">&amp;&amp;</span> <span class="token function">originHide</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+     <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">originPage</span><span class="token punctuation">(</span>ctx<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/study/guide/wx/watcher.html" class="prev">
+        微信小程序自定义watcher监听器
+      </a></span> <span class="next"><a href="/study/guide/canvas/">
+        canvas介绍
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/study/assets/js/app.1a30554e.js" defer></script><script src="/study/assets/js/3.9d14a621.js" defer></script><script src="/study/assets/js/28.eb945df1.js" defer></script>
+  </body>
+</html>
